@@ -1,0 +1,44 @@
+(2023-04-26 19:55:34,454): New producer: 0
+(2023-04-26 19:55:34,457): Publishing product Coffee(name='Indonezia', price=1, acidity=5.05, roast_level='MEDIUM') from producer 0
+(2023-04-26 19:55:34,830): Publishing product Coffee(name='Indonezia', price=1, acidity=5.05, roast_level='MEDIUM') from producer 0
+(2023-04-26 19:55:35,205): Publishing product Coffee(name='Indonezia', price=1, acidity=5.05, roast_level='MEDIUM') from producer 0
+(2023-04-26 19:55:35,580): Publishing product Coffee(name='Indonezia', price=1, acidity=5.05, roast_level='MEDIUM') from producer 0
+(2023-04-26 19:55:35,955): Publishing product Coffee(name='Indonezia', price=1, acidity=5.05, roast_level='MEDIUM') from producer 0
+(2023-04-26 19:55:36,336): Publishing product Coffee(name='Indonezia', price=1, acidity=5.05, roast_level='MEDIUM') from producer 0
+(2023-04-26 19:55:36,709): Publishing product Coffee(name='Indonezia', price=1, acidity=5.05, roast_level='MEDIUM') from producer 0
+(2023-04-26 19:55:37,083): Publishing product Coffee(name='Indonezia', price=1, acidity=5.05, roast_level='MEDIUM') from producer 0
+(2023-04-26 19:55:37,458): Publishing product Coffee(name='Indonezia', price=1, acidity=5.05, roast_level='MEDIUM') from producer 0
+(2023-04-26 19:55:37,832): Publishing product Coffee(name='Indonezia', price=1, acidity=5.05, roast_level='MEDIUM') from producer 0
+(2023-04-26 19:55:38,207): Publishing product Coffee(name='Indonezia', price=1, acidity=5.05, roast_level='MEDIUM') from producer 0
+(2023-04-26 19:55:38,581): Publishing product Coffee(name='Indonezia', price=1, acidity=5.05, roast_level='MEDIUM') from producer 0
+(2023-04-26 19:55:38,956): Publishing product Coffee(name='Indonezia', price=1, acidity=5.05, roast_level='MEDIUM') from producer 0
+(2023-04-26 19:55:39,330): Publishing product Coffee(name='Indonezia', price=1, acidity=5.05, roast_level='MEDIUM') from producer 0
+(2023-04-26 19:55:39,704): Publishing product Coffee(name='Indonezia', price=1, acidity=5.05, roast_level='MEDIUM') from producer 0
+(2023-04-26 19:55:40,078): Publishing product Coffee(name='Indonezia', price=1, acidity=5.05, roast_level='MEDIUM') from producer 0
+(2023-04-26 19:55:40,452): Publishing product Coffee(name='Indonezia', price=1, acidity=5.05, roast_level='MEDIUM') from producer 0
+(2023-04-26 19:55:40,825): Publishing product Coffee(name='Indonezia', price=1, acidity=5.05, roast_level='MEDIUM') from producer 0
+(2023-04-26 19:55:41,198): Publishing product Coffee(name='Indonezia', price=1, acidity=5.05, roast_level='MEDIUM') from producer 0
+(2023-04-26 19:55:41,572): Publishing product Coffee(name='Indonezia', price=1, acidity=5.05, roast_level='MEDIUM') from producer 0
+(2023-04-26 19:55:41,945): Publishing product Coffee(name='Indonezia', price=1, acidity=5.05, roast_level='MEDIUM') from producer 0
+2023-04-26 20:06:41,115 - New producer: -1
+2023-04-26 20:06:41,118 - Publishing product Tea(name='Linden', price=9, type='Herbal') from producer 0
+2023-04-26 20:06:41,118 - Registering new cart
+2023-04-26 20:06:41,124 - Adding product Tea(name='Linden', price=9, type='Herbal') to cart 0
+2023-04-26 20:06:41,126 - Adding product Coffee(name='Indonezia', price=1, acidity=5.05, roast_level='MEDIUM') to cart 0
+2023-04-26 20:06:41,301 - Publishing product Tea(name='Linden', price=9, type='Herbal') from producer 0
+2023-04-26 20:06:41,439 - Adding product Coffee(name='Indonezia', price=1, acidity=5.05, roast_level='MEDIUM') to cart 0
+2023-04-26 20:06:41,486 - Publishing product Coffee(name='Indonezia', price=1, acidity=5.05, roast_level='MEDIUM') from producer 0
+2023-04-26 20:06:41,721 - Publishing product Tea(name='Linden', price=9, type='Herbal') from producer 0
+2023-04-26 20:06:41,753 - Adding product Coffee(name='Indonezia', price=1, acidity=5.05, roast_level='MEDIUM') to cart 0
+2023-04-26 20:06:41,757 - Adding product Coffee(name='Indonezia', price=1, acidity=5.05, roast_level='MEDIUM') to cart 0
+2023-04-26 20:06:41,905 - Publishing product Tea(name='Linden', price=9, type='Herbal') from producer 0
+2023-04-26 20:06:42,072 - Adding product Coffee(name='Indonezia', price=1, acidity=5.05, roast_level='MEDIUM') to cart 0
+2023-04-26 20:06:42,089 - Publishing product Coffee(name='Indonezia', price=1, acidity=5.05, roast_level='MEDIUM') from producer 0
+2023-04-26 20:06:42,324 - Publishing product Tea(name='Linden', price=9, type='Herbal') from producer 0
+2023-04-26 20:06:42,386 - Adding product Coffee(name='Indonezia', price=1, acidity=5.05, roast_level='MEDIUM') to cart 0
+2023-04-26 20:06:42,391 - Adding product Coffee(name='Indonezia', price=1, acidity=5.05, roast_level='MEDIUM') to cart 0
+2023-04-26 20:06:42,508 - Publishing product Tea(name='Linden', price=9, type='Herbal') from producer 0
+2023-04-26 20:06:42,693 - Publishing product Coffee(name='Indonezia', price=1, acidity=5.05, roast_level='MEDIUM') from producer 0
+2023-04-26 20:06:42,705 - Adding product Coffee(name='Indonezia', price=1, acidity=5.05, roast_level='MEDIUM') to cart 0
+2023-04-26 20:06:42,708 - Remove product Coffee(name='Indonezia', price=1, acidity=5.05, roast_level='MEDIUM') from cart 0
+2023-04-26 20:06:42,712 - Place order from cart 0

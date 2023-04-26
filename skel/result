@@ -1,30 +1,104 @@
 Starting test 1
+Traceback (most recent call last):
+  File "/mnt/d/Users/Python3/ASC/asc-public/assignments/1-marketplace/skel/test.py", line 14, in <module>
+    from tema.marketplace import Marketplace
+  File "/mnt/d/Users/Python3/ASC/asc-public/assignments/1-marketplace/skel/tema/marketplace.py", line 13, in <module>
+    from product import Coffee, Tea
+ModuleNotFoundError: No module named 'product'
+TIMEOUT. Test 1 exceeded maximum allowed time of 30
 Finished test 1
-Test 1:		PASSED
+Test 1:		FAILED
 Starting test 2
+Traceback (most recent call last):
+  File "/mnt/d/Users/Python3/ASC/asc-public/assignments/1-marketplace/skel/test.py", line 14, in <module>
+    from tema.marketplace import Marketplace
+  File "/mnt/d/Users/Python3/ASC/asc-public/assignments/1-marketplace/skel/tema/marketplace.py", line 13, in <module>
+    from product import Coffee, Tea
+ModuleNotFoundError: No module named 'product'
+TIMEOUT. Test 2 exceeded maximum allowed time of 30
 Finished test 2
-Test 2:		PASSED
+Test 2:		FAILED
 Starting test 3
+Traceback (most recent call last):
+  File "/mnt/d/Users/Python3/ASC/asc-public/assignments/1-marketplace/skel/test.py", line 14, in <module>
+    from tema.marketplace import Marketplace
+  File "/mnt/d/Users/Python3/ASC/asc-public/assignments/1-marketplace/skel/tema/marketplace.py", line 13, in <module>
+    from product import Coffee, Tea
+ModuleNotFoundError: No module named 'product'
+TIMEOUT. Test 3 exceeded maximum allowed time of 30
 Finished test 3
-Test 3:		PASSED
+Test 3:		FAILED
 Starting test 4
+Traceback (most recent call last):
+  File "/mnt/d/Users/Python3/ASC/asc-public/assignments/1-marketplace/skel/test.py", line 14, in <module>
+    from tema.marketplace import Marketplace
+  File "/mnt/d/Users/Python3/ASC/asc-public/assignments/1-marketplace/skel/tema/marketplace.py", line 13, in <module>
+    from product import Coffee, Tea
+ModuleNotFoundError: No module named 'product'
+TIMEOUT. Test 4 exceeded maximum allowed time of 30
 Finished test 4
-Test 4:		PASSED
+Test 4:		FAILED
 Starting test 5
+Traceback (most recent call last):
+  File "/mnt/d/Users/Python3/ASC/asc-public/assignments/1-marketplace/skel/test.py", line 14, in <module>
+    from tema.marketplace import Marketplace
+  File "/mnt/d/Users/Python3/ASC/asc-public/assignments/1-marketplace/skel/tema/marketplace.py", line 13, in <module>
+    from product import Coffee, Tea
+ModuleNotFoundError: No module named 'product'
+TIMEOUT. Test 5 exceeded maximum allowed time of 30
 Finished test 5
-Test 5:		PASSED
+Test 5:		FAILED
 Starting test 6
+Traceback (most recent call last):
+  File "/mnt/d/Users/Python3/ASC/asc-public/assignments/1-marketplace/skel/test.py", line 14, in <module>
+    from tema.marketplace import Marketplace
+  File "/mnt/d/Users/Python3/ASC/asc-public/assignments/1-marketplace/skel/tema/marketplace.py", line 13, in <module>
+    from product import Coffee, Tea
+ModuleNotFoundError: No module named 'product'
+TIMEOUT. Test 6 exceeded maximum allowed time of 30
 Finished test 6
-Test 6:		PASSED
+Test 6:		FAILED
 Starting test 7
+Traceback (most recent call last):
+  File "/mnt/d/Users/Python3/ASC/asc-public/assignments/1-marketplace/skel/test.py", line 14, in <module>
+    from tema.marketplace import Marketplace
+  File "/mnt/d/Users/Python3/ASC/asc-public/assignments/1-marketplace/skel/tema/marketplace.py", line 13, in <module>
+    from product import Coffee, Tea
+ModuleNotFoundError: No module named 'product'
+TIMEOUT. Test 7 exceeded maximum allowed time of 30
 Finished test 7
-Test 7:		PASSED
+Test 7:		FAILED
 Starting test 8
+Traceback (most recent call last):
+  File "/mnt/d/Users/Python3/ASC/asc-public/assignments/1-marketplace/skel/test.py", line 14, in <module>
+    from tema.marketplace import Marketplace
+  File "/mnt/d/Users/Python3/ASC/asc-public/assignments/1-marketplace/skel/tema/marketplace.py", line 13, in <module>
+    from product import Coffee, Tea
+ModuleNotFoundError: No module named 'product'
+TIMEOUT. Test 8 exceeded maximum allowed time of 30
 Finished test 8
-Test 8:		PASSED
+Test 8:		FAILED
 Starting test 9
+Traceback (most recent call last):
+  File "/mnt/d/Users/Python3/ASC/asc-public/assignments/1-marketplace/skel/test.py", line 14, in <module>
+    from tema.marketplace import Marketplace
+  File "/mnt/d/Users/Python3/ASC/asc-public/assignments/1-marketplace/skel/tema/marketplace.py", line 13, in <module>
+    from product import Coffee, Tea
+ModuleNotFoundError: No module named 'product'
+TIMEOUT. Test 9 exceeded maximum allowed time of 60
 Finished test 9
-Test 9:		PASSED
+Test 9:		FAILED
 Starting test 10
+Traceback (most recent call last):
+  File "/mnt/d/Users/Python3/ASC/asc-public/assignments/1-marketplace/skel/test.py", line 14, in <module>
+    from tema.marketplace import Marketplace
+  File "/mnt/d/Users/Python3/ASC/asc-public/assignments/1-marketplace/skel/tema/marketplace.py", line 13, in <module>
+    from product import Coffee, Tea
+ModuleNotFoundError: No module named 'product'
+TIMEOUT. Test 10 exceeded maximum allowed time of 60
 Finished test 10
-Test 10:		PASSED
+Test 10:		FAILED
+
+Run pylint
+
+/usr/bin/python3: No module named pylint

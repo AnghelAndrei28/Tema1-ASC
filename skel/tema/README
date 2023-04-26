@@ -1,0 +1,23 @@
+331CC Anghel Andrei
+Timp de lucru: 24 ore
+
+Mod de lucru:
+- Pentru Marketplace folosesc o lista de produse, in care stochez produsul si
+  id-ul producatorului. De asemenea, pentru a tine cont de limita de produse
+  pentru fiecare producator, folosesc un array petru care valoarea specifica
+  id-ului producatorului reprezinta numarul de produse ale acestuia. Pentru a
+  cauta un anumit produs in lista folosesc functionale
+- Pentru cart folosesc un array de liste, in care retin pentru fiecare id de
+  cart lista de produse specifica cart-ului, alaturi de id-ul producatorului
+  pentru a realiza cu usurinta operatia de a scote produse din cart
+- Producer-ul va crea produsele intr-un loop infinit, de
+  fiecare data doar cantitatea ceruta pentru fiecare produs din lista. Se
+  incearca publicarea produsului si se asteapta pana cand produsul are
+  suficient spatiu pentru a fi adaugat. Dupa trecerea timpului de asteptare
+  pentru republicare se reincearca adaugarea lui si se repeta procesul pana
+  cand se poate publica.
+- In consumer se itereaza lista de cosuri si in fiecare dintre ele, lista
+  de operatii. Daca operatia din lista este adaugare se incearca adaugarea in
+  market, dar daca produsul nu este in stoc se asteapta timpul setat de
+  asteptare si se reincearca operatia. Pentru remove, se scoate fix cantitatea
+  de produs specificata

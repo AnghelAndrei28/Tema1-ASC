@@ -6,118 +6,10 @@ Assignment 1
 March 2021
 """
 from threading import Lock
-import unittest
-from product import Product, Coffee, Tea
+import logging
+import logging.handlers
+import time
 
-
-class TestMarketPlace(unittest.TestCase):
-
-    def setUp(self):
-        """
-        Sets up a mock marketplace with a queue of size 10 for producers
-        """
-        self.marketplace = Marketplace(10)
-
-    def test_register_producer(self):
-        """
-        Tests if the registered producers get the correct ids
-        """
-        self.assertEqual(self.marketplace.register_producer(), 0)
-        self.assertEqual(self.marketplace.register_producer(), 1)
-        self.assertEqual(self.marketplace.register_producer(), 2)
-
-    def test_publish(self):
-
-        producer = self.marketplace.register_producer()
-        first_product = Coffee("Brasil", 1, "5.09", "MEDIUM")
-        second_product = Tea("Wild Cherry", 4, "Wild Cherry")
-
-        """
-        Tests if multiple products are correctly published to marketplace
-        and the number of products/ producer is increased
-        """
-        self.marketplace.publish(producer, first_product)
-        self.assertEqual(self.marketplace.producers_list[producer], 1)
-        self.assertIn({'id': producer, 'product': first_product}, self.marketplace.products_list)
-        self.marketplace.publish(producer, second_product)
-        self.assertEqual(self.marketplace.producers_list[producer], 2)
-        self.assertIn({'id': producer, 'product': second_product}, self.marketplace.products_list)
-
-    def test_new_cart(self):
-        """
-        Tests if the first four new carts get the correct ids
-        """
-        self.assertEqual(self.marketplace.new_cart(), 0)
-        self.assertEqual(self.marketplace.new_cart(), 1)
-
-    def test_add_to_cart(self):
-        """
-        Tests if the products are added to the cart correctly
-        """
-        first_product = Coffee("Brasil", 1, "5.09", "MEDIUM")
-        second_product = Tea("Wild Cherry", 4, "Wild Cherry")
-        producer = self.marketplace.register_producer()
-        cart = self.marketplace.new_cart()
-
-        self.marketplace.publish(producer, first_product)
-        self.marketplace.publish(producer, second_product)
-
-        self.marketplace.add_to_cart(cart, first_product)
-
-        self.assertNotIn({'id': producer, 'product': first_product}, self.marketplace.products_list)
-        self.assertEqual(self.marketplace.producers_list[producer], 1)
-        self.assertIn({'id': producer, 'product': first_product}, self.marketplace.carts_list[cart])
-
-        self.marketplace.add_to_cart(cart, second_product)
-
-        self.assertNotIn({'id': producer, 'product': second_product}, self.marketplace.products_list)
-        self.assertEqual(self.marketplace.producers_list[producer], 0)
-        self.assertIn({'id': producer, 'product': second_product}, self.marketplace.carts_list[cart])
-
-    def test_remove_from_cart(self):
-        """
-        Tests if the products are added to the cart correctly
-        """
-        first_product = Coffee("Brasil", 1, "5.09", "MEDIUM")
-        second_product = Tea("Wild Cherry", 4, "Wild Cherry")
-        producer = self.marketplace.register_producer()
-        cart = self.marketplace.new_cart()
-
-        self.marketplace.publish(producer, first_product)
-        self.marketplace.publish(producer, second_product)
-
-        self.marketplace.add_to_cart(cart, first_product)
-        self.marketplace.add_to_cart(cart, second_product)
-
-        self.marketplace.remove_from_cart(cart, first_product)
-        self.assertIn({'id': producer, 'product': first_product}, self.marketplace.products_list)
-        self.assertNotIn({'id': producer, 'product': first_product}, self.marketplace.carts_list[cart])
-        self.assertEqual(self.marketplace.producers_list[producer], 1)
-
-        self.marketplace.remove_from_cart(cart, second_product)
-        self.assertIn({'id': producer, 'product': second_product}, self.marketplace.products_list)
-        self.assertNotIn({'id': producer, 'product': second_product}, self.marketplace.carts_list[cart])
-        self.assertEqual(self.marketplace.producers_list[producer], 2)
-
-    def test_place_order(self):
-        """
-        Tests if place order returns the expected products
-        """
-        first_product = Coffee("Brasil", 1, "5.09", "MEDIUM")
-        second_product = Tea("Wild Cherry", 4, "Wild Cherry")
-        producer = self.marketplace.register_producer()
-        cart = self.marketplace.new_cart()
-
-        self.marketplace.publish(producer, first_product)
-        self.marketplace.publish(producer, second_product)
-
-        self.marketplace.add_to_cart(cart, first_product)
-        self.marketplace.add_to_cart(cart, second_product)
-
-        ordered_products = self.marketplace.place_order(cart)
-
-        self.assertEqual(ordered_products[0], first_product)
-        self.assertEqual(ordered_products[1], second_product)
 
 
 class Marketplace:
@@ -141,10 +33,20 @@ class Marketplace:
         [self.producer_index, self.cart_index, self.products_list, self.producers_list, self.carts_list] = \
             [-1, -1, [], [], []]
 
+        self.logger = logging.getLogger()
+        self.logger.setLevel(logging.INFO)
+        file_handler = logging.handlers.RotatingFileHandler("marketplace.log", backupCount=10)
+        file_handler.setLevel(logging.INFO)
+        formatter = logging.Formatter("%(asctime)s - %(message)s")
+        formatter.converter = time.gmtime
+        file_handler.setFormatter(formatter)
+        self.logger.addHandler(file_handler)
+
     def register_producer(self):
         """
         Returns an id for the producer that calls this.
         """
+        self.logger.info("New producer: %s", self.producer_index)
         with self.producer_lock:
             self.producer_index += 1
             self.producers_list.append(0)
@@ -163,6 +65,8 @@ class Marketplace:
         :returns True or False. If the caller receives False, it should wait and then try again.
         """
 
+        self.logger.info("Publishing product %s from producer %s", str(product), producer_id)
+
         producer_number_of_products = self.producers_list[producer_id]
 
         if producer_number_of_products < self.queue_size_per_producer:
@@ -180,6 +84,8 @@ class Marketplace:
 
         :returns an int representing the cart_id
         """
+        self.logger.info("Registering new cart")
+
         with self.cart_lock:
             self.cart_index += 1
             self.carts_list.append([])
@@ -197,6 +103,8 @@ class Marketplace:
 
         :returns True or False. If the caller receives False, it should wait and then try again
         """
+        self.logger.info("Adding product %s to cart %d", product, cart_id)
+
         my_list = list(filter(lambda products_element: products_element['product'] is product, self.products_list))
         if my_list:
             with self.cart_lock:
@@ -219,6 +127,8 @@ class Marketplace:
         :type product: Product
         :param product: the product to remove from cart
         """
+        self.logger.info("Remove product %s from cart %d", product, cart_id)
+
         my_product = [element for element in self.carts_list[cart_id] if element["product"] is product][0]
         if my_product is not None:
             with self.producer_lock:
@@ -236,8 +146,12 @@ class Marketplace:
         :type cart_id: Int
         :param cart_id: id cart
         """
+        self.logger.info("Place order from cart %d", cart_id)
+
         my_list = []
         for elem in self.carts_list[cart_id]:
             my_list.append(elem["product"])
 
         return my_list
+
+
